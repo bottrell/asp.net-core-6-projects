@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "kT4YxwzClL9Y5R/cs7KLPrl0Oszn+8qIm0JQNbQhADj+oD/VaDYPmc4w70cCNqH/9aP06zYId29x8rlVRiv/ng==",
+  "dgSpecHash": "XwWM5isI9AKFpRc9+2G3mMVSIIomF2cQCbaSO8IBimPQoSn9+xKqRQL3MwOvRBrmOOxafKz0dcaFBDVDGhcBqQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\3134416\\Desktop\\Test\\PartyInvites\\PartyInvites.csproj",
+  "projectFilePath": "C:\\Users\\3134416\\Desktop\\ASP.NET\\asp.net-core-6-projects\\PartyInvites\\PartyInvites.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

@@ -14,11 +14,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\3134416\\Desktop\\Test\\PartyInvites\\PartyInvites.csproj",
+      "projectUniqueName": "C:\\Users\\3134416\\Desktop\\ASP.NET\\asp.net-core-6-projects\\PartyInvites\\PartyInvites.csproj",
       "projectName": "PartyInvites",
-      "projectPath": "C:\\Users\\3134416\\Desktop\\Test\\PartyInvites\\PartyInvites.csproj",
+      "projectPath": "C:\\Users\\3134416\\Desktop\\ASP.NET\\asp.net-core-6-projects\\PartyInvites\\PartyInvites.csproj",
       "packagesPath": "C:\\Users\\3134416\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\3134416\\Desktop\\Test\\PartyInvites\\obj\\",
+      "outputPath": "C:\\Users\\3134416\\Desktop\\ASP.NET\\asp.net-core-6-projects\\PartyInvites\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

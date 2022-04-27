@@ -17,8 +17,20 @@ namespace PartyInvites.Controllers{
 
         [HttpPost]
         public IActionResult RsvpForm(GuestResponse guestResponse) {
-            //TODO, actually store response from guests
+            //The base controller class provides a property called ModelState
+            //that will provide the details of the model binding process
+            if (ModelState.IsValid) {
+                Repository.AddResponse(guestResponse);
+                return View("Thanks", guestResponse);
+            }
+            //If the validation fails, ModelState.IsValid returns false
+            //When the view is rendered, Razor has access to the validation details
+            //and tag helpers can be used to access the details and display to the user
             return View();
+        }
+
+        public IActionResult ListResponses() {
+            return View(Repository.Responses.Where(r => r.WillAttend == true));
         }
     }
 }

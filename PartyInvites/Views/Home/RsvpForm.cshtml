@@ -11,6 +11,12 @@
     </head>
     <body>
         <form asp-action="RsvpForm" method="POST">
+            <!-- 
+                the value for asp-validation-summary is a vlaue from an enumeration 
+                called Validation Summary, which specifies what typs of validation 
+                errors the summary will contain 
+            -->
+            <div asp-validation-summary="All"></div>
             <div>
                 <label asp-for="Name">Your Name</label>
                 <input asp-for="Name" />
