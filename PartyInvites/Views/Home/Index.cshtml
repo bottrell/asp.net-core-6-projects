@@ -6,15 +6,16 @@
 <html>
     <head>
         <meta name="viewport" content="width=device-width" />
+        <link rel="stylesheet" href="/lib/bootstrap/dist/css/bootstrap.css" />
         <title>Party</title>
     </head>
     <body>
         <div>
-            <div>
-                You're invited!
-            </div>
+            <div class="text-center m-2">
+                <h3>You're invited!</h3>
             <!-- vv This is called linking action methods vv -->
-            <a asp-action="RsvpForm">RSVP Now!!</a>
+            <a class="btn btn-primary" asp-action="RsvpForm">RSVP Now!!</a>
+            </div>
         </div>
     </body>
 </html>
