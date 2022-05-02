@@ -3,6 +3,8 @@ namespace LanguageFeatures.Models {
         public string Name {get; set;} = string.Empty;
         public decimal? Price {get; set;}
 
+        //lambda expressions to initialize values / Define Properties in a class
+        public bool NameBeginsWithS => Name?[0] == 'S';
         public static Product?[] GetProducts() {
             Product kayak = new Product {
                 Name = "Kayak",

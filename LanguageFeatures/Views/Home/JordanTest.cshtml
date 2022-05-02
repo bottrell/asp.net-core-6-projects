@@ -1,0 +1,21 @@
+@model IEnumerable<string>
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width" />
+        <link rel="stylesheet" href="/lib/bootstrap/dist/css/bootstrap.css" />
+        <title>Language Features</title>
+    </head>
+    <body>
+        <h5 class="bg-primary">You made it to the Jordan Test Page! I think we're figuring out how routing works!</h5>
+        <ul>
+        @foreach(string s in Model) {
+            <li>@s</li>
+        }
+        </ul>
+    </body>
+</html>

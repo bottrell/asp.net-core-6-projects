@@ -22,3 +22,4 @@ C:\Users\Jordan\Desktop\Projects\asp.net-core-6-projects\LanguageFeatures\obj\De
 C:\Users\Jordan\Desktop\Projects\asp.net-core-6-projects\LanguageFeatures\obj\Debug\net6.0\ref\LanguageFeatures.dll
 C:\Users\Jordan\Desktop\Projects\asp.net-core-6-projects\LanguageFeatures\obj\Debug\net6.0\LanguageFeatures.RazorAssemblyInfo.cache
 C:\Users\Jordan\Desktop\Projects\asp.net-core-6-projects\LanguageFeatures\obj\Debug\net6.0\LanguageFeatures.RazorAssemblyInfo.cs
+C:\Users\Jordan\Desktop\Projects\asp.net-core-6-projects\LanguageFeatures\bin\Debug\net6.0\LanguageFeatures.staticwebassets.runtime.json

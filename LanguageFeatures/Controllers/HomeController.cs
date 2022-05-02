@@ -44,5 +44,29 @@ namespace LanguageFeatures.Controllers {
             return View(new string[] {p?.Name ?? "No Value"});
 
         }
+
+        public ViewResult ExtensionMethodTest() {
+            ShoppingCart cart = new ShoppingCart {Products = Product.GetProducts()};
+            decimal cartTotal = cart.TotalPrices();
+            return View("Index", new string[] {$"Total:{cartTotal:C2}"});
+        }
+
+        Product[] productArray = {
+            new Product {Name = "Gummy Worms", Price = 10M},
+            new Product {Name = "Yoga Block", Price = 50M},
+            new Product {Name = "GTX 1080", Price = 250M},
+            new Product {Name = "Literally just worms", Price = 5M}
+            };
+        
+        public ViewResult LambdaExpressionTest() {
+            //we added an extension method to the IEnumerable interface to Filter on a lambda function that we pass into filter
+            decimal priceFilterTotal = productArray.Filter(p => (p?.Price?? 0) >= 20).TotalPrices();
+            decimal nameFilterTotal = productArray.Filter(p => p?.Name?[0] == 'S').TotalPrices();
+            return View("Index", new string[] {$"Filtered Price is {priceFilterTotal}"});
+        }
+
+        public ViewResult JordanTest(string name) {
+            return View("Index", new string[] {$"You selected the {name} page!"});
+        }
     }
 }
