@@ -10,7 +10,7 @@ namespace SportsStore.Models {
         applications data.
      */
     public class StoreDbContext : DbContext {
-        public StoreDbContext(DbcontextOptions<StoreDbContext> options) : base(options) {}
+        public StoreDbContext(DbContextOptions<StoreDbContext> options) : base(options) {}
 
         public DbSet<Product> Products => Set<Product>();
     }

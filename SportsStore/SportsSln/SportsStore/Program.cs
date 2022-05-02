@@ -13,6 +13,9 @@ builder.Services.AddDbContext<StoreDbContext>(opts => {
         builder.Configuration["ConnectionStrings:SportsStoreConnection"]);
 });
 
+//Creates a service where each HTTP request gets its own repository object
+builder.Services.AddScoped<IStoreRepository, EFStoreRepository>();
+
 var app = builder.Build();
 
 //app.MapGet("/", () => "Hello World!");
@@ -22,4 +25,9 @@ app.UseStaticFiles();
 //This line tells ASP.NET  Core how to match URLs to controller classes
 app.MapDefaultControllerRoute();
 
+//Remember that EnsurePopulated accepts an IApplicationBuilder object as a parameter
+SeedData.EnsurePopulated(app);
 app.Run();
+
+//Note To self, if you need to reset the database, then run the following command in the SportsStore folder
+//dotnet ef database drop --force --context StoreDbContext
