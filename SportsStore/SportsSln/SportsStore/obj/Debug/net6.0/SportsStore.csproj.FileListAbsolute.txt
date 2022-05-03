@@ -80,3 +80,4 @@ C:\Users\Jordan\Desktop\Projects\asp.net-core-6-projects\SportsStore\SportsSln\S
 C:\Users\Jordan\Desktop\Projects\asp.net-core-6-projects\SportsStore\SportsSln\SportsStore\obj\Debug\net6.0\SportsStore.csproj.CopyComplete
 C:\Users\Jordan\Desktop\Projects\asp.net-core-6-projects\SportsStore\SportsSln\SportsStore\obj\Debug\net6.0\SportsStore.genruntimeconfig.cache
 C:\Users\Jordan\Desktop\Projects\asp.net-core-6-projects\SportsStore\SportsSln\SportsStore\obj\Debug\net6.0\ref\SportsStore.dll
+C:\Users\Jordan\Desktop\Projects\asp.net-core-6-projects\SportsStore\SportsSln\SportsStore\bin\Debug\net6.0\SportsStore.staticwebassets.runtime.json

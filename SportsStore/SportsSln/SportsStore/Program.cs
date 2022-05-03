@@ -22,6 +22,9 @@ var app = builder.Build();
 
 app.UseStaticFiles();
 
+//overriding ASP.NET routing to change the URL scheme of the application
+app.MapControllerRoute("pagination", "Products/Page{productPage}", new {controller = "Home", action = "Index"});
+
 //This line tells ASP.NET  Core how to match URLs to controller classes
 app.MapDefaultControllerRoute();
 

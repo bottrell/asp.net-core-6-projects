@@ -24,6 +24,11 @@ namespace SportsStore.Infrastructure {
 
         public string? PageAction {get; set;}
 
+        public bool PageClassesEnabled {get; set;} = false;
+        public string PageClass {get; set;} = String.Empty;
+        public string PageClassNormal {get; set;} = String.Empty;
+        public string PageClassSelected {get; set;} = String.Empty;
+
         //this tag helper populates a div element with a elements that correspond to pages of products
         //Tag helpers are beneficial because they can be easily unit tested
         //custom tag helpers have to be registered in _ViewImports.cshtml
@@ -34,6 +39,12 @@ namespace SportsStore.Infrastructure {
                 for (int i = 1; i <= PageModel.TotalPages; i++) {
                     TagBuilder tag = new TagBuilder("a");
                     tag.Attributes["href"] = urlHelper.Action(PageAction, new {productPage = i});
+
+                    if(PageClassesEnabled) {
+                        tag.AddCssClass(PageClass);
+                        tag.AddCssClass(i == PageModel.CurrentPage ? PageClassSelected : PageClassNormal);
+                    }
+
                     tag.InnerHtml.Append(i.ToString());
                     result.InnerHtml.AppendHtml(tag);
                 }
