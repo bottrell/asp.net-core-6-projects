@@ -23,7 +23,15 @@ var app = builder.Build();
 app.UseStaticFiles();
 
 //overriding ASP.NET routing to change the URL scheme of the application
-app.MapControllerRoute("pagination", "Products/Page{productPage}", new {controller = "Home", action = "Index"});
+//Routing scheme: 
+    // "/"                Lists the first page of products from all categories
+    // "/Page2"           Lists the specified page showing items from all categories
+    // "/Soccer"          Shows the first page of items from a specific category (in this case, the Soccer category)
+    // "/Soccer/Page2"    Shows the specified page of items from the specified category
+app.MapControllerRoute("catpage", "{category}/Page{productPage:int}", new { Controller = "Home", action = "Index"});
+app.MapControllerRoute("page", "Page{productPage:int}", new { Controller = "Home", action = "Index", productPage = 1});
+app.MapControllerRoute("category", "{category}", new { Controller = "Home", action = "Index", productPage = 1});
+app.MapControllerRoute("pagination", "Products/Page{productPage}", new { Controller = "Home", action = "Index", productPage = 1});
 
 //This line tells ASP.NET  Core how to match URLs to controller classes
 app.MapDefaultControllerRoute();

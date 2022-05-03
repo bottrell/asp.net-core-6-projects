@@ -24,6 +24,12 @@ namespace SportsStore.Infrastructure {
 
         public string? PageAction {get; set;}
 
+        //Using the HtmlAttributeName attribute allows me to specify a prefix for attribute names on the element
+        //The value of any attribute whose name begins with the "page-url-" prefix will be added to the dictionary
+        //That is assigned to the PageUrlValues property, which is then passed to the IUrlHelper.Action method to generate the HTML
+        [HtmlAttributeName(DictionaryAttributePrefix = "page-url-")]
+        public Dictionary<string, object> PageUrlValues {get; set;} = new Dictionary<string, object>();
+
         public bool PageClassesEnabled {get; set;} = false;
         public string PageClass {get; set;} = String.Empty;
         public string PageClassNormal {get; set;} = String.Empty;
@@ -38,7 +44,8 @@ namespace SportsStore.Infrastructure {
                 TagBuilder result = new TagBuilder("div");
                 for (int i = 1; i <= PageModel.TotalPages; i++) {
                     TagBuilder tag = new TagBuilder("a");
-                    tag.Attributes["href"] = urlHelper.Action(PageAction, new {productPage = i});
+                    PageUrlValues["productPage"] = i;
+                    tag.Attributes["href"] = urlHelper.Action(PageAction, PageUrlValues);
 
                     if(PageClassesEnabled) {
                         tag.AddCssClass(PageClass);
