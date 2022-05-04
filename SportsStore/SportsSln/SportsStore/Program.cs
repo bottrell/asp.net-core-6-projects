@@ -16,11 +16,22 @@ builder.Services.AddDbContext<StoreDbContext>(opts => {
 //Creates a service where each HTTP request gets its own repository object
 builder.Services.AddScoped<IStoreRepository, EFStoreRepository>();
 
+builder.Services.AddRazorPages();
+
+//Sets up the in-memory data store
+builder.Services.AddDistributedMemoryCache();
+
+//Registers the services used to access session data
+builder.Services.AddSession();
+
 var app = builder.Build();
 
 //app.MapGet("/", () => "Hello World!");
 
 app.UseStaticFiles();
+
+//Allows the session system to automatically associate requests with sessions when they arrive from the client
+app.UseSession();
 
 //overriding ASP.NET routing to change the URL scheme of the application
 //Routing scheme: 
@@ -35,6 +46,8 @@ app.MapControllerRoute("pagination", "Products/Page{productPage}", new { Control
 
 //This line tells ASP.NET  Core how to match URLs to controller classes
 app.MapDefaultControllerRoute();
+
+app.MapRazorPages();
 
 //Remember that EnsurePopulated accepts an IApplicationBuilder object as a parameter
 SeedData.EnsurePopulated(app);
