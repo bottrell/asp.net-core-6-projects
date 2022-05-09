@@ -24,6 +24,14 @@ builder.Services.AddDistributedMemoryCache();
 //Registers the services used to access session data
 builder.Services.AddSession();
 
+//The AddScoped method specifies that the same object should be used to satisfy related requests for Cart instances
+//by default this means that any Cart required by the components handling the same HTTP request will receive the same object
+//recieves the collection of services that have been registered and passes the collection to the GetCart method of the SessionCart class
+builder.Services.AddScoped<Cart>(sp => SessionCart.GetCart(sp));
+
+//Specfiies the same object should always be used
+builder.Services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
+
 var app = builder.Build();
 
 //app.MapGet("/", () => "Hello World!");
